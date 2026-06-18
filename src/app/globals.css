@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0716;
+  --color-surface: #160f2b;
+  --color-surface-2: #1f1640;
+  --color-border: #2c2150;
+  --color-primary: #8b5cf6;
+  --color-primary-strong: #7c3aed;
+  --color-reward: #22c55e;
+  --color-punish: #f43f5e;
+  --color-leave: #f59e0b;
+
+  --animate-pop: pop 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-fade-in: fade-in 0.25s ease-out;
+  --animate-rise: rise 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-flip: flip 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes rise {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes flip {
+  0% { transform: rotateY(90deg) scale(0.8); opacity: 0; }
+  100% { transform: rotateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: var(--color-bg);
+  color: #f5f3ff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-image:
+    radial-gradient(60% 50% at 20% 0%, rgba(139, 92, 246, 0.18), transparent 70%),
+    radial-gradient(50% 50% at 100% 10%, rgba(244, 63, 94, 0.12), transparent 70%);
+  min-height: 100dvh;
+}
