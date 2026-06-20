@@ -24,6 +24,13 @@ export default function HomePage() {
       <p className="text-xs text-violet-300/40">
         Pass the phone. No internet rivals — just your friends.
       </p>
+
+      <a
+        href="/admin"
+        className="text-xs text-violet-300/30 transition-colors hover:text-violet-200"
+      >
+        Admin
+      </a>
     </div>
   );
 }

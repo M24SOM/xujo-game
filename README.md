@@ -41,6 +41,7 @@ Fill in from **Project Settings → API**:
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY` (server-only — never exposed to the browser)
+- `ADMIN_PIN` — 4-digit PIN for the `/admin` outcomes editor (defaults to `1234`)
 
 ### 4. Run
 
@@ -64,6 +65,14 @@ Open http://localhost:3000.
 - Turn order is derived deterministically from the pick history, skipping
   eliminated players and looping through whoever's still active.
 - The game ends when all 20 numbers are gone, or only one player remains.
+
+## Admin
+
+Visit `/admin` (or the discreet **Admin** link on the home screen) and enter the
+4-digit `ADMIN_PIN`. From there you can add, edit, and delete outcomes (type,
+title, description, weight). Changes apply to **new** games. The PIN is checked
+server-side and stored as a salted hash in an httpOnly cookie. An outcome used by
+a past game can't be deleted (it's referenced by that game's history).
 
 ## Project structure
 
